@@ -18,7 +18,7 @@ Spin up docker-compose
 $ docker-compose up -d --build
 ```
 
-Now under `localhost:8004/docs`, you can find the APIs.
+Now under `localhost:8000/docs`, you can find the APIs.
 
 ### Tests
 
@@ -53,13 +53,13 @@ docker build -f src/Dockerfile -t scraiber/fastapi-db-example:v1.0.0 .
 docker push scraiber/fastapi-db-example:v1.0.0
 ```
 
-## Setup PyCharm virtual environment (for Python 3.12)
+## Setup PyCharm virtual environment (for Python 3.13)
 
-First, create a virtual environment for Python 3.12. Then run
+First, create a virtual environment for Python 3.13. Then run
 
 ```sh
-python3.12 -m ensurepip --upgrade
-python3.12 -m pip install --upgrade setuptools
+python3.13 -m ensurepip --upgrade
+python3.13 -m pip install --upgrade setuptools
 ```
 
 in the terminal. After this, you can install the packages in `requirements.txt`.

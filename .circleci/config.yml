@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build -t $IMAGE_NAME:latest ./src
+            docker build -t $IMAGE_NAME:latest .
       - run:
           name: Install trivy
           command: |

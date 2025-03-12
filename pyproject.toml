@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "fastapi-db-example"
+version = "0.1.0"
+description = "FastAPI example to interact with different databases"
+authors = ["Scraiber GmbH <contact@scraiber.com>"]
+readme = "README.md"
+license = "MIT"
+packages = [{ include = "app", from = "src" }]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "0.115.11"
+sqlmodel = "0.0.24"
+pydantic = {version = "2.10.6", extras = ["email"]}
+asyncpg = "0.30.0"
+sqlalchemy = "2.0.38"
+python-dotenv = "1.0.1"
+boto3 = "1.37.1"
+redis = {version = "5.2.1", extras = ["hiredis"]}
+uvicorn = "0.34.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.5"
+pytest-asyncio = "0.25.3"
+httpx = "0.28.1"
+psycopg2-binary = "2.9.10"
+asyncio = "3.4.3"
+asgi-lifespan = "2.1.0"
+trio = "0.29.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]

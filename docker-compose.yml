@@ -1,15 +1,13 @@
-version: '3.8'
-
 services:
-
   web:
     build:
-      context: ./src
       dockerfile: Dockerfile
     volumes:
-      - ./src:/usr/src
+      - ./src/app:/usr/src/app
+      - ./src/tests:/usr/src/tests
+      - ./pyproject.toml:/usr/src/pyproject.toml
     ports:
-      - 8004:8000
+      - 8000:8000
     environment:
       PRIMARY_DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/foo
       REPLICA_DATABASE_URL: postgresql+asyncpg://postgres:postgres@db_replica:5432/foo

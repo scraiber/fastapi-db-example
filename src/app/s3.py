@@ -33,7 +33,6 @@ async def get_from_s3(key: str):
         return file
     except ClientError as ex:
         if ex.response['Error']['Code'] == 'NoSuchKey':
-            # TODO: add logging
             return b''
         else:
             raise HTTPException(status_code=http_status.HTTP_500_INTERNAL_SERVER_ERROR,
